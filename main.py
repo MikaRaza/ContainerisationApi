@@ -1,10 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
-from .database import engine, SessionLocal
-from .models import Base, Item
-from .schemas import ItemCreate, ItemRead
-from .crud import get_items, get_item, create_item
+from database import engine, SessionLocal
+from models import Base, Item
+from schemas import ItemCreate, ItemRead
+from crud import get_items, get_item, create_item
 
 Base.metadata.create_all(bind=engine)
 

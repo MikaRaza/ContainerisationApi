@@ -1,16 +1,17 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import os
 
-# Ensure the DATABASE_URL is correctly set or fallback to a default value
-DATABASE_URL = os.getenv("DATABASE_URL", "mysql+pymysql://")
 
-# Create the SQLAlchemy engine
+DATABASE_URL = os.getenv("DATABASE_URL", "mysql+pymysql://mika:mika2306@host.docker.internal:3307/fastapi_db")
+
+# Création du moteur SQLAlchemy
 engine = create_engine(DATABASE_URL)
 
-# Create a configured "Session" class
+# Création d'une session SQLAlchemy
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# Create a Base class for declarative models
+# Déclaration de la classe de base pour les modèles SQLAlchemy
 Base = declarative_base()
+
