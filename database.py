@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-DATABASE_URL = os.getenv("DATABASE_URL", "mysql+pymysql://mika:mika2306@host.docker.internal:3307/fastapi_db")
+DATABASE_URL = os.getenv("DATABASE_URL", "mysql+pymysql://mika:mika2306@host.docker.internal:3307/items")
 
 # Création du moteur SQLAlchemy
 engine = create_engine(DATABASE_URL)
